@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Models Agency "New Face"</title>
+    <style>
+        .form_validation_warning_message {
+            font-size: 12px;
+            color: red;
+        }
+    </style>
 </head>
 
 <body style="background-color:lightskyblue; text-align: center">
@@ -11,11 +17,16 @@
 
     <form id="survey-form">
         <label for="fname">First name:</label><br>
-        <input type="text" placeholder="Enter fist name" id="fname" name="fname"><br>
+        <input type="text" placeholder="Enter fist name" id="fname" name="fname" required>
+        <p class="form_validation_warning_message" id="wrong_fname"></p>
+
         <label for="lname">Last name:</label><br>
-        <input type="text" placeholder="Enter last name" id="lname" name="lname"><br>
+        <input type="text" placeholder="Enter last name" id="lname" name="lname" required>
+        <p class="form_validation_warning_message" id="wrong_lname"></p>
+
         <label for="number">Age:</label><br>
-        <input type="number" placeholder="Enter age" min="0" id="number" name="number"><br>
+        <input type="number" placeholder="Enter age" min="0" id="number" name="number" required>
+        <p class="form_validation_warning_message" id="wrong_number"></p>
 
         <label for="dropdown">Gender:</label><br>
         <select type="radio" id="dropdown" name="gender" value="male">
@@ -28,21 +39,33 @@
         <label for="no!"><input id="no!"type="radio" name="no!" >No</label><br>
 
         <label for="weight">Weight:</label><br>
-        <input type="text" id="weight" name="weight"><br>
+        <input type="text" id="weight" name="weight" required>
+        <p class="form_validation_warning_message" id="wrong_weight"></p>
+
         <label for="height">Height:</label><br>
-        <input type="text" id="height" name="height"><br>
+        <input type="text" id="height" name="height" required>
+        <p class="form_validation_warning_message" id="wrong_height"></p>
+
 
         <h3>Parameters</h3>
         <label for="chestg">Chest girth:</label><br>
-        <input type="text" id="chestg" name="chestg"><br>
+        <input type="text" id="chestg" name="chestg" required>
+        <p class="form_validation_warning_message" id="wrong_chestg"></p>
+
+
         <label for="waistg">Waist girth:</label><br>
-        <input type="text" id="waistg" name="waistg"><br>
+        <input type="text" id="waistg" name="waistg" required>
+        <p class="form_validation_warning_message" id="wrong_waistg"></p>
+
         <label for="thighg">Thigh girth:</label><br>
-        <input type="text" id="thighg" name="thighg"><br>
+        <input type="text" id="thighg" name="thighg" required>
+        <p class="form_validation_warning_message" id="wrong_thighg"></p>
 
         <h3>We will send you additional information by email</h3>
         <label for="email">Email address:</label><br>
-        <input type="email" placeholder="Enter your email" id="email" name="email"><br>
+        <input type="email" placeholder="Enter your email" id="email" name="email" required><br>
+        <p class="form_validation_warning_message" id="wrong_email"></p>
+
 
         <h3>Have you had any experience in modeling before?</h3>
         <label for="yes1"><input id="yes1"type="checkbox" name="yes1" >Yes, I am a professional model</label><br>
@@ -52,8 +75,74 @@
         <label for="textarea">Any questions?:</label><br>
         <textarea type="text" id="textarea" name="textarea"></textarea><br>
 
-            <button type="submit">Submit</button>
+        <button onclick="submitForm()">Submit</button>
     </form>
 </div>
+<script>
+    function submitForm() {
+
+        let validation = true;
+        if (document.getElementById('fname').value == '') {
+            document.getElementById('wrong_fname').innerHTML = 'Enter your first name';
+            validation = false;
+        } else {
+            document.getElementById('wrong_fname').innerHTML = '';
+        }
+        if (document.getElementById('lname').value == '') {
+            document.getElementById('wrong_lname').innerHTML = 'Enter your last name';
+            validation = false;
+        } else {
+            document.getElementById('wrong_lname').innerHTML = '';
+        }
+        if (document.getElementById('number').value == '') {
+            document.getElementById('wrong_number').innerHTML = 'Enter your age';
+            validation = false;
+        }  else {
+            document.getElementById('wrong_number').innerHTML = '';
+        }
+        if (document.getElementById('weight').value == '') {
+            document.getElementById('wrong_weight').innerHTML = 'Enter your weight';
+            validation = false;
+        } else {
+            document.getElementById('wrong_weight').innerHTML = '';
+        }
+        if (document.getElementById('height').value == '') {
+            document.getElementById('wrong_height').innerHTML = 'Enter your height';
+            validation = false;
+        } else {
+            document.getElementById('wrong_height').innerHTML = '';
+        }
+        if (document.getElementById('chestg').value == '') {
+            document.getElementById('wrong_chestg').innerHTML = 'Enter chest girth';
+            validation = false;
+        } else {
+            document.getElementById('wrong_chestg').innerHTML = '';
+        }
+        if (document.getElementById('waistg').value == '') {
+            document.getElementById('wrong_waistg').innerHTML = 'Enter waist girth';
+            validation = false;
+        } else {
+            document.getElementById('wrong_waistg').innerHTML = '';
+        }
+        if (document.getElementById('thighg').value == '') {
+            document.getElementById('wrong_thighg').innerHTML = 'Enter thigh girth';
+            validation = false;
+        } else {
+            document.getElementById('wrong_thighg').innerHTML = '';
+        }
+        if (document.getElementById('thighg').value == '') {
+            document.getElementById('wrong_email').innerHTML = 'Enter your email';
+            validation = false;
+        } else {
+            document.getElementById('wrong_email').innerHTML = '';
+        }
+
+        if (!validation) {
+            alert('Something is wrong, please check your data in form.')
+        } else {
+            document.getElementById('survey-form').submit();
+        }
+    }
+</script>
 </body>
 </html>
