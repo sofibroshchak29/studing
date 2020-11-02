@@ -29,34 +29,34 @@ refery_click_button.addEventListener('click', () => {
 })
 
 player_1_click_button.addEventListener('click', () => {
-    changeHp(random(15), player_1)
+    changeScore(random(15), player_1)
 })
 
 player_2_click_button.addEventListener('click', () => {
-    changeHp(random(15), player_2)
+    changeScore(random(15), player_2)
 })
 
 const init = () => {
     refery.element.style.display = 'none';
-    renderHp(player_1)
-    renderHp(player_2)
+    renderPlayer(player_1)
+    renderPlayer(player_2)
     random(15)
 }
 
-const renderHp = person => {
-    renderHpLife(person)
-    renderProgressbarHp(person)
+const renderPlayer = person => {
+    renderScore(person)
+    renderProgressbar(person)
 }
 
-const renderHpLife = person => {
+const renderScore = person => {
     person.health.innerText = person.current_health + ' / ' + person.max_health
 }
 
-const renderProgressbarHp = person => {
+const renderProgressbar = person => {
     person.progress_bar.style.width = person.current_health + '%'
 }
 
-const changeHp = (count, person) => {
+const changeScore = (count, person) => {
     if (person.current_health < count) {
         person.current_health = 0
         refery.element.style.display = 'block';
@@ -69,7 +69,7 @@ const changeHp = (count, person) => {
     } else {
         person.current_health -= count
     }
-    renderHp(person)
+    renderPlayer(person)
 }
 
 const random = num => {
