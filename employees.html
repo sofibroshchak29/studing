@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">-->
     <link rel="stylesheet" href="./css/employee.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
     <div class="two">
         Employee info
         <div id="employee-info">
-            No user info
+            Select User for see info
         </div>
     </div>
 </section>
@@ -33,13 +34,15 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
+            <form action="" class="form-container">
                 <h1>New employee</h1>
-                <label for="email"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
-                <label for="email"><b>About</b></label>
-                <input type="text" placeholder="Enter About" name="about" required>
-                <button type="submit" class="btn">Save</button>
+<!--                <label for="id"><b>Name</b></label>-->
+<!--                <input type="text" placeholder="Enter Name" name="name" required>-->
+                <label for="name"><b>Name</b></label>
+                <input id="form_name" type="text" placeholder="Enter Name" name="name" required>
+                <label for="text"><b>About</b></label>
+                <input id="form_text" type="text" placeholder="Enter About" name="text" required>
+                <button class="btn" onclick="createUser(event)">Save</button>
             </form>
         </div>
     </div>
