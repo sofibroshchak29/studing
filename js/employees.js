@@ -24,6 +24,68 @@ window.onclick = function(event) {
     }
 }
 
+getUsersList();
+async function getUsersList() {
+    var url = 'http://localhost:3000/employees';
+
+    let response = await fetch(url);
+
+    var list_html = '';
+    if (response.ok) {
+        var employees_object = await response.json();
+        // alert(json);
+        // alert(json[0].name);
+        var employee_list_element = document.getElementById("employee-list");
+        Object.entries(employees_object).forEach(function(element) {
+            if (element.length > 1) {
+                Object.entries(element).forEach(function(user) {
+                    if (user[1].id !=undefined) {
+                        let user_id = user[1].id;
+                        let user_name = user[1].name;
+                        list_html += '<li id="' + user_id + '">' + user_name + '</li>';
+                    }
+                });
+            }
+        })
+        employee_list_element.innerHTML = list_html;
+    } else {
+        alert("Помилка HTTP: " + response.status);
+    }
+}
+
+getUser(3);
+async function getUser(id) {
+    var url = 'http://localhost:3000/employees/' + id + '/';
+    // var url = 'http://localhost:3000/employees/2/';
+
+    let response = await fetch(url);
+
+    var info_html = '';
+    if (response.ok) {
+        var employee_object = await response.json();
+        var employee_info_element = document.getElementById("employee-info");
+        if (employee_object.id != undefined) {
+            let user_id = employee_object.id;
+            let user_name = employee_object.name;
+            let user_text = employee_object.text;
+            info_html += '<div> id: ' + user_id + '<br> name: ' + user_name + '<br> text: ' + user_text + '</div>';
+        }
+        employee_info_element.innerHTML = info_html;
+    } else {
+        alert("Помилка HTTP: " + response.status);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 const refery_click_button = document.getElementById('restart-btn');
