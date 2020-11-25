@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "User 1",
+      "text": "Some text for User 1",
+      "image": "image url"
+    },
+    {
+      "id": 2,
+      "name": "User 1",
+      "text": "Some text for User 1",
+      "image": "image url"
+    },
+    {
+      "id": 3,
+      "name": "User 1",
+      "text": "Some text for User 1",
+      "image": "image url"
+    }
+  ]
+}
