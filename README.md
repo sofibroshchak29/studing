@@ -15,5 +15,7 @@ $ cd json-server-lib
 $ npm init -y
 $ sudo npm i -g json-server
 
-// запуск
+// створити db.json в кореневій папці
+
+// запуск сервера
 json-server --watch db.json
