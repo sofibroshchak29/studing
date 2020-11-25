@@ -8,14 +8,14 @@
     },
     {
       "id": 2,
-      "name": "User 1",
-      "text": "Some text for User 1",
+      "name": "User 2",
+      "text": "Some text for User 2",
       "image": "image url"
     },
     {
       "id": 3,
-      "name": "User 1",
-      "text": "Some text for User 1",
+      "name": "User 3",
+      "text": "Some text for User 3",
       "image": "image url"
     }
   ]
