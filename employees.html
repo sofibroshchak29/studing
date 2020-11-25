@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/employee.css">
+</head>
+<body>
+
+<h2>Employees</h2>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Add employee</button>
+
+<section class="container">
+    <div class="one">
+        <h3>List of employees</h3>
+        <ul>
+            <li>User1</li>
+            <li>User1</li>
+            <li>User1</li>
+        </ul>
+    </div>
+    <div class="two">
+        Employee info
+        <div>
+            <img src="images/employees/user1.img">
+        </div>
+        <div>
+            Name: <span>User name</span>
+        </div>
+        <div>
+            Text: <span>User text</span>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>New employee</h1>
+                <label for="email"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" required>
+                <label for="email"><b>About</b></label>
+                <input type="text" placeholder="Enter About" name="about" required>
+                <button type="submit" class="btn">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/employees.js"></script>
+
+</body>
+</html>
+
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Pokemon Fight</title>-->
+<!--    <link rel="stylesheet" href="./css/game_card.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div class="body">-->
+<!--    <header>-->
+<!--        Employees-->
+<!--    </header>-->
+<!--    <div>-->
+<!--        <div>-->
+<!--            <ul>-->
+<!--                <li onclick="showUserInfo('user1')">User 1</li>-->
+<!--                <li onclick="showUserInfo('user2')">User 2</li>-->
+<!--                <li onclick="showUserInfo('user3')">User 3</li>-->
+<!--                <li onclick="showUserInfo('user4')">User 4</li>-->
+<!--                <li onclick="showUserInfo('user5')">User 5</li>-->
+<!--            </ul>-->
+
+<!--        </div>-->
+
+
+<!--        <div>-->
+<!--           User Info-->
+<!--            <div>-->
+<!--                <img id="user-image" src="">-->
+<!--                <div id="user-name"></div>-->
+<!--                <div id="user-text"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="catch_screen"></div>-->
+
+
+<!--<iframe>-->
+<!--    <form name="myForm" action="/action_page.php" method="post">-->
+<!--        Name: <input type="text" name="fname">-->
+<!--        <input type="submit" value="Submit">-->
+<!--    </form>-->
+<!--</iframe>-->
+
+
+<!--<script type="text/javascript" src="js/game_card.js"></script>-->
+
+
+
+
+<!--</body>-->
+
+<!--</html>-->
